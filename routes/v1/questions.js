@@ -18,7 +18,7 @@ Router.post('/', (req, res) => {
   const created = req.body.created
   db.addQuestion(content, title, created)
     .then((data) => {
-      res.sendStatus(200)
+      res.sendStatus(201)
     })
     .catch((error) => res.sendStatus(500))
 })
@@ -39,7 +39,7 @@ Router.post('/:id/answers', (req, res) => {
   const id = req.params.id
   db.addAnswer(content, created, id)
     .then((data) => {
-      res.sendStatus(200)
+      res.sendStatus(201)
     })
     .catch((error) => res.sendStatus(500))
 })
