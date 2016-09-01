@@ -7,7 +7,7 @@ module.exports = Router
 Router.get('/', (req, res) => {
   db.getAllQuestions()
     .then((data) => {
-      res.sendStatus(200).json({data:data})
+      res.json({data:data})
     })
     .catch((error) => res.sendStatus(500))
 })
@@ -28,7 +28,7 @@ Router.get('/:id/answers', (req, res) => {
   db.getAnswersById(id)
     .then((data) => {
       console.log(data)
-      res.sendStatus(200).json({data:data})
+      res.json({data:data})
     })
     .catch((error) => res.sendStatus(500))
 })
