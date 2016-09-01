@@ -1,8 +1,8 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = (knex, Promise) => {
   // Deletes ALL existing entries
   return knex('questions').del()
-    .then(function () {
+    .then(() => {
       return Promise.all([
         // Inserts seed entries
         knex('questions').insert({id: 1, content: 'Stupid question content 1', title: 'Stupid question 1', created: '1' }),
