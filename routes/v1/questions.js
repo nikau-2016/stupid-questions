@@ -7,9 +7,9 @@ module.exports = Router
 Router.get('/', (req, res) => {
   db.getAllQuestions()
     .then((data) => {
-      res.status(200).json({data:data})
+      res.sendStatus(200).json({data:data})
     })
-    .catch((error) => res.status(500))
+    .catch((error) => res.sendStatus(500))
 })
 
 Router.post('/', (req, res) => {
@@ -18,9 +18,9 @@ Router.post('/', (req, res) => {
   const created = req.body.created
   db.addQuestion(content, title, created)
     .then((data) => {
-      res.status(200)
+      res.sendStatus(200)
     })
-    .catch((error) => res.status(500))
+    .catch((error) => res.sendStatus(500))
 })
 
 Router.get('/:id/answers', (req, res) => {
@@ -28,9 +28,9 @@ Router.get('/:id/answers', (req, res) => {
   db.getAnswersById(id)
     .then((data) => {
       console.log(data)
-      res.status(200).json({data:data})
+      res.sendStatus(200).json({data:data})
     })
-    .catch((error) => res.status(500))
+    .catch((error) => res.sendStatus(500))
 })
 
 Router.post('/:id/answers', (req, res) => {
@@ -39,7 +39,7 @@ Router.post('/:id/answers', (req, res) => {
   const id = req.params.id
   db.addAnswer(content, created, id)
     .then((data) => {
-      res.status(200)
+      res.sendStatus(200)
     })
-    .catch((error) => res.status(500))
+    .catch((error) => res.sendStatus(500))
 })
