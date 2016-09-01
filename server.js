@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 3000
 
 const app = express()
 
-const index = require('./routes/index')
+const questions = require('./routes/v1/questions')
 
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use('/', index)
+app.use('/questions/v1', questions)
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
