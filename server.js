@@ -10,9 +10,8 @@ const questions = require('./routes/v1/questions')
 
 app.use(express.static('public'))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
-app.use('/questions/v1', questions)
+app.use('/v1/questions', questions)
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
