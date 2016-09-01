@@ -32,7 +32,7 @@ module.exports = {
       port: '5432',
       database: 'dat16vcqpa25mp',
       user:     'eugprbskmqtovo',
-      password: 'process.env.DBPWD'
+      password: process.env.DBPWD
     },
     pool: {
       min: 2,
