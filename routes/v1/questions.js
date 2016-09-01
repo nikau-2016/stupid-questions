@@ -27,6 +27,7 @@ Router.get('/:id/answers', (req, res) => {
   const id = req.params.id
   db.getAnswersById(id)
     .then((data) => {
+      console.log(data)
       res.status(200).json({data:data})
     })
     .catch((error) => res.status(500))
