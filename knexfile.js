@@ -3,9 +3,18 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'postgresql',
     connection: {
-      filename: './dev.sqlite3'
+      database: 'stupidquestions',
+      user:     'eda',
+      password: ''
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'stupidquestions_migrations'
     }
   },
 
@@ -33,10 +42,6 @@ module.exports = {
       database: 'dat16vcqpa25mp',
       user:     'eugprbskmqtovo',
       password: process.env.DBPWD
-    },
-    pool: {
-      min: 2,
-      max: 10
     },
     migrations: {
       tableName: 'knex_migrations'
