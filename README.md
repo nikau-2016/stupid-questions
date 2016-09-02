@@ -9,17 +9,19 @@ Client: Kamon, Mandy, Jana<br>
 Server: Erwin, Sach, Siobhan<br>
 Full-stack: Justin, Prem
 
+##Heroku Server##
 
-#Routes - Questions
+The server is currently running on the domain ``http://s2pid-kweschinz.herokuapp.com``
 
-<h3>GET : http://s2pid-kweschinz.herokuapp.com/v1/questions </h3>
+##Routes - Questions
+
+###GET : /v1/questions ###
 
 Sends back all questions currently in the database in JSON 
 
 Response body:
 
-<pre>
-<code>
+```
 {
   data: [
     {
@@ -36,22 +38,19 @@ Response body:
     },    
   ]
 }
-<code>
-</pre>
+```
 
-<h3>POST: http://s2pid-kweschinz.herokuapp.com/v1/questions </h3>
+###POST: /v1/questions ###
 
 You need to send the data as JSON (application/json)
 
-<pre>
-  <code>
+```
   {
     "content": "...and why should I use it?",
     "title": "What is GIT?",
     "created": "2nd SEPT 2016"
   }
-  </code>
-</pre>
+```
 
 ```
 Status(200) - OK
@@ -59,16 +58,15 @@ Status(500) - Internal Server Error
 ```
 
 
-#Routes - Answers
+##Routes - Answers
 
-<h3>GET : http://s2pid-kweschinz.herokuapp.com/v1/questions/[id]/answers </h3>
+###GET : /v1/questions/[id]/answers ###
 
 Sends back all answers, currently in the database, attached with the question's id 
 
 Response body:
 
-<pre>
-<code>
+```
 {
   data: [
     {
@@ -85,21 +83,18 @@ Response body:
     },    
   ]
 }
-<code>
-</pre>
+```
 
-<h3>POST: http://s2pid-kweschinz.herokuapp.com/v1/questions/[id]/answers </h3>
+### POST: /v1/questions/[id]/answers ###
 
 You need to send the data as JSON (application/json)
 
-<pre>
-  <code>
+```
   {
       content: "YES! Working",
       created: "2nd SEPT 2016"
   }
-  </code>
-</pre>
+```
 
 ```
 Status(200) - OK
