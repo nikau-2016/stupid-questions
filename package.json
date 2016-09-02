@@ -4,7 +4,10 @@
   "description": "No question too stupid.",
   "main": "index.js",
   "scripts": {
-    "test": "tape 'tests/**/*.test.js' -r babel-register | tap-spec"
+    "knex": "knex",
+    "start": "node-inspector --web-port=8888 & nodemon --debug server.js",
+    "test": "tape 'tests/**/*.test.js' -r babel-register | tap-spec",
+    "heroku-postbuild": "npm run knex migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -27,12 +30,22 @@
     "eslint-config-standard": "^6.0.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^6.2.0",
-    "eslint-plugin-standard": "^2.0.0"
+    "eslint-plugin-standard": "^2.0.0",
+    "node-inspector": "^0.12.8",
+    "nodemon": "^1.10.2",
+    "sqlite3": "^3.1.4"
   },
   "babel": {
     "presets": [
       "es2015",
       "react"
     ]
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.0",
+    "express": "^4.14.0",
+    "knex": "^0.11.10",
+    "pg": "^6.1.0"
   }
 }
