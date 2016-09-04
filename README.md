@@ -17,7 +17,7 @@ The server is currently running on the domain ``http://s2pid-kweschinz.herokuapp
 
 ###GET : /v1/questions ###
 
-Sends back all questions currently in the database in JSON 
+Sends back all questions currently in the database in JSON
 
 Response body:
 
@@ -62,7 +62,7 @@ Status(500) - Internal Server Error
 
 ###GET : /v1/questions/[id]/answers ###
 
-Sends back all answers, currently in the database, attached with the question's id 
+Sends back all answers, currently in the database, attached with the question's id
 
 Response body:
 
@@ -106,4 +106,44 @@ Status(500) - Internal Server Error
 
 
 
+# Instructions - Server Installation
 
+### Install packages
+
+In the terminal, enter your repository and run
+
+```
+npm i
+```
+
+To install all packages in the json file
+
+### Create database with migrations and seeds
+
+In the terminal, enter the following commands
+
+Enter the postgres terminal via the psql command
+
+```
+psql
+```
+
+Create the database 'stupidquestions' and set owner to EDA
+
+```
+create database stupidquestions with owner eda
+```
+
+Once the database has been created, migrate the tables to the database
+
+```
+npm run knex migrate:latest
+```
+
+Finally, fill the tables with the seeds
+
+```
+npm run knex seed:run
+```
+
+The Server for Stupid Questions should now be installed with necessary data, if you encounter issues, please contact the administrator (Rich)
