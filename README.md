@@ -109,12 +109,14 @@ Status(500) - Internal Server Error
 # Instructions - Server Installation
 
 ### Install packages
+
 In the terminal, enter your repository and run
+
 ```
 npm i
 ```
 
-to install all packages in the json file
+To install all packages in the json file
 
 ### Create database with migrations and seeds
 
@@ -132,10 +134,16 @@ Create the database 'stupidquestions' and set owner to EDA
 create database stupidquestions with owner eda
 ```
 
-Finally, migrate to the database with the corresponding seeds
+Once the database has been created, migrate the tables to the database
 
 ```
 npm run knex migrate:latest
 ```
 
-The Server for Stupid Questions should now be installed, if you encounter issues, contact the administrator (Rich)
+Finally, fill the tables with the seeds
+
+```
+npm run knex seed:run
+```
+
+The Server for Stupid Questions should now be installed with necessary data, if you encounter issues, please contact the administrator (Rich)
