@@ -33,9 +33,8 @@ Router.get('/:id/answers', (req, res) => {
 
 Router.post('/:id/answers', (req, res) => {
   const content = req.body.content
-  const created = req.body.created
   const id = req.params.id
-  db.addAnswer(content, created, id)
+  db.addAnswer(content, id)
     .then((data) => {
       res.sendStatus(201)
     })
