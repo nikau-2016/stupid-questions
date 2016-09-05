@@ -4,7 +4,7 @@ exports.up = (knex, Promise) => {
     table.increments('id').primary()
     table.string('content')
     table.string('title')
-    table.timestamps(false, true)
+    table.string('created')
   })
 }
 
